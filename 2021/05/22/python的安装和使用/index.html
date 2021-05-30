@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                                <span class="chip bg-color">测试</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
                     </div>
@@ -468,7 +468,73 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="/2021/05/22/gaoyang/1.gif" alt="1"></p>
+                <h1 id="python的安装和使用"><a href="#python的安装和使用" class="headerlink" title="python的安装和使用"></a>python的安装和使用</h1><p>大家好我是羔羊，今天给大家讲解一下python的安装和使用</p>
+<h3 id="1、python的安装"><a href="#1、python的安装" class="headerlink" title="1、python的安装"></a>1、python的安装</h3><p>首先安装Python我们要先去下载python的安装包，这里我建议去python的官方网站下载：<a target="_blank" rel="noopener" href="https://www.python.org/">https://www.python.org/</a></p>
+<p>进去以后会出现一下画面</p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/1.png" alt="1"></p>
+<p>进去以后点击第一步的Downloads,然后根据你自己的要求进行选择，如果你的电脑是windows的你就选择第二步里面的windows按钮，苹果电脑就选择下面的按钮，这里因为我是windows的所以选择windows按钮进入。</p>
+<p>​    进入以后可以看到如下图画面，</p>
+<img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530103723319.png" alt="image-20210530103723319" style="zoom:50%;">
+
+<p>在这里有python的多个版本，这里没有特别的要求，但是有一些要注意的点，有些版本的python是不能在特定的windows系统上面运行的，</p>
+<img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530103947315.png" alt="image-20210530103947315" style="zoom: 80%;">
+
+<p>这里我们选择的时候不要选择太新的版本，因为有些第三方的库他没有python更新这么快，可能会导致不支持最新版本的python的使用，所以在这里我选择的是python3.8.8版本（绝对不是因为我觉得这个数字比较吉利）</p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530110110305.png" alt="image-20210530110110305"></p>
+<p>在选择下载的时候还需要注意你的电脑是多少位操作系统的，你就下载多少位的。</p>
+<h3 id="2、查看操作系统"><a href="#2、查看操作系统" class="headerlink" title="2、查看操作系统"></a>2、查看操作系统</h3><p>![image-20210530104923536](python第一课/image-20210530104923536.png</p>
+<ol>
+<li>按下windows键和R键</li>
+</ol>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530105026950.png" alt="image-20210530105026950"></p>
+<ol start="2">
+<li>在弹出的运行窗口里面输入cmd然后选择确定</li>
+</ol>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530105136456.png" alt="image-20210530105136456"></p>
+<ol start="3">
+<li><p>在弹出来的窗口中命令提示符窗口中输入：systeminfo</p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530105330812.png">4. 找到系统类型这里显示64就是64位的显示32就是32位的</p>
+</li>
+</ol>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530105828496.png" alt="image-20210530105828496"></p>
+<p>然后我们选择自己位数的程序下载</p>
+<img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530110151817.png" alt="image-20210530110151817" style="zoom:67%;">
+
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530110328776.png" alt="image-20210530110328776"></p>
+<h3 id="3、运行python-exe"><a href="#3、运行python-exe" class="headerlink" title="3、运行python.exe"></a>3、运行python.exe</h3><p>直接双击运行，在这里要注意勾选添加到环境变量里面去，不然就直接重装吧，还简单些</p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530110522285.png" alt="image-20210530110522285"></p>
+<p>然后就是等待他下载完成</p>
+<img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530110559309.png" alt="image-20210530110559309" style="zoom:67%;">
+
+<img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530110912831.png" alt="image-20210530110912831" style="zoom: 67%;">
+
+<p>这就是下载完成了我们选择Close关闭就可以了，那么怎么确定自己是否安装完成了呢？</p>
+<p>我们可以选择windows+r 然后输入cmd</p>
+<p><img src="file://E:\boke1\source_posts\python%E7%AC%AC%E4%B8%80%E8%AF%BE\image-20210530105136456.png?lastModify=1622344185" alt="image-20210530105136456"></p>
+<p>在命令提示符里面输入： python</p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530111145666.png" alt="image-20210530111145666"></p>
+<p>出现以上画面就是下载成功了。</p>
+<h3 id="4、使用自带的IDLE"><a href="#4、使用自带的IDLE" class="headerlink" title="4、使用自带的IDLE"></a>4、使用自带的IDLE</h3><p>关于如何使用python有很多种方法，这里推荐一种比较适合初学者的方法就是使用python官方自带的软件IDLE</p>
+<p>当你下载好python以后，你按下windows按钮，会出现以下提醒，这里其实就是python自动给你安装的运行程序，对于一些嫌麻烦的人，直接在这里运行IDLE这个程序就可以用来运行python了。</p>
+<img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530111604183.png" alt="image-20210530111604183" style="zoom:67%;">
+
+<p>这里可以直接点击左键将他拖到桌面上来</p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530111901676.png" alt="image-20210530111901676"></p>
+<p>具体的运行就是选择<strong>file - new file</strong> 然后在新出现的untitled里面进行编辑</p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112119597.png" alt="image-20210530112119597"></p>
+<p>比如我运行一个 hello word</p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112256522.png" alt="image-20210530112256522"></p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112312432.png" alt="image-20210530112312432"></p>
+<p>这里大概意思是问你要不要保存然后运行，我们点击确定</p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112442982.png" alt="image-20210530112442982"></p>
+<p>选择保存的位置点击保存</p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112511016.png" alt="image-20210530112511016"></p>
+<p>在shell界面就会显示出你的代码了。</p>
+<p>这里在讲一下怎么去设置字体的大小</p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112620763.png" alt="image-20210530112620763"></p>
+<p>然后会出现如下图所示</p>
+<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112728917.png" alt="image-20210530112728917"></p>
+<p>选择完成点击ok就可以</p>
 
                 
             </div>
@@ -495,7 +561,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gaoiyang.github.io/2021/05/22/gaoyang/">https://gaoiyang.github.io/2021/05/22/gaoyang/</a>
+                    <a href="https://gaoiyang.github.io/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">https://gaoiyang.github.io/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -533,8 +599,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                                    <span class="chip bg-color">测试</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
                         </div>
@@ -706,10 +772,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2021/05/22/gaoyang/">
                     <div class="card-image">
@@ -727,9 +792,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-22
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-22
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -738,7 +803,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -754,7 +818,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">
@@ -784,6 +848,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
