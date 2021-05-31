@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="gaoyang, Gao Yang">
+    <meta name="keywords" content="python网络爬虫requests库（1）, Gao Yang">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>gaoyang | Gao Yang</title>
+    <title>python网络爬虫requests库（1） | Gao Yang</title>
     <link rel="icon" type="image/png" href="/gaoyang.icon">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">gaoyang</h1>
+                    <h1 class="description center-align post-title">python网络爬虫requests库（1）</h1>
                 </div>
             </div>
         </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-22
+                    2021-05-31
                 </div>
                 
 
@@ -468,73 +468,138 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python的安装和使用"><a href="#python的安装和使用" class="headerlink" title="python的安装和使用"></a>python的安装和使用</h1><p>大家好我是羔羊，今天给大家讲解一下python的安装和使用</p>
-<h3 id="1、python的安装"><a href="#1、python的安装" class="headerlink" title="1、python的安装"></a>1、python的安装</h3><p>首先安装Python我们要先去下载python的安装包，这里我建议去python的官方网站下载：<a target="_blank" rel="noopener" href="https://www.python.org/">https://www.python.org/</a></p>
-<p>进去以后会出现一下画面</p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/1.png" alt="1"></p>
-<p>进去以后点击第一步的Downloads,然后根据你自己的要求进行选择，如果你的电脑是windows的你就选择第二步里面的windows按钮，苹果电脑就选择下面的按钮，这里因为我是windows的所以选择windows按钮进入。</p>
-<p>​    进入以后可以看到如下图画面，</p>
-<img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530103723319.png" alt="image-20210530103723319" style="zoom:50%;">
+                <h1 id="python网络爬虫requests库（1）"><a href="#python网络爬虫requests库（1）" class="headerlink" title="python网络爬虫requests库（1）"></a>python网络爬虫requests库（1）</h1><h3 id="requests库的安装"><a href="#requests库的安装" class="headerlink" title="requests库的安装"></a>requests库的安装</h3><p>requests库属于python的第三方库，需要去进行安装，具体的操作为：</p>
+<h6 id="1、打开cmd在里面输入-pip-list"><a href="#1、打开cmd在里面输入-pip-list" class="headerlink" title="1、打开cmd在里面输入: pip list"></a>1、打开cmd在里面输入: pip list</h6><img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531134605991.png" alt="image-20210531134605991" style="zoom: 80%;">
 
-<p>在这里有python的多个版本，这里没有特别的要求，但是有一些要注意的点，有些版本的python是不能在特定的windows系统上面运行的，</p>
-<img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530103947315.png" alt="image-20210530103947315" style="zoom: 80%;">
 
-<p>这里我们选择的时候不要选择太新的版本，因为有些第三方的库他没有python更新这么快，可能会导致不支持最新版本的python的使用，所以在这里我选择的是python3.8.8版本（绝对不是因为我觉得这个数字比较吉利）</p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530110110305.png" alt="image-20210530110110305"></p>
-<p>在选择下载的时候还需要注意你的电脑是多少位操作系统的，你就下载多少位的。</p>
-<h3 id="2、查看操作系统"><a href="#2、查看操作系统" class="headerlink" title="2、查看操作系统"></a>2、查看操作系统</h3><p>![image-20210530104923536](python第一课/image-20210530104923536.png</p>
+
+<p>可以看到当前pip里面没有requests库，所以需要去进行安装。</p>
+<h6 id="2、输入安装指令：-pip-install-requests-i-https-pypi-douban-com-simple"><a href="#2、输入安装指令：-pip-install-requests-i-https-pypi-douban-com-simple" class="headerlink" title="2、输入安装指令： pip install requests -i https://pypi.douban.com/simple/"></a>2、输入安装指令： pip install requests -i <a target="_blank" rel="noopener" href="https://pypi.douban.com/simple/">https://pypi.douban.com/simple/</a></h6><p>在这里会出现很多种情况，比如：</p>
+<img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531135019990.png" alt="image-20210531135019990" style="zoom: 80%;">
+
+<p>这种一般都是开启了代理模式导致的，我们需要把代理关掉，一下是具体操作：</p>
+<p>点击设置进入设置页面</p>
+<img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531135153967.png" alt="image-20210531135153967" style="zoom:67%;">
+
+<p>输入： 代理  - 选择 -  代理服务器设置</p>
+<img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531135220458.png" alt="image-20210531135220458" style="zoom:67%;">
+
+<p>在这里把 手动设置代理 关闭</p>
+<img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531135307899.png" alt="image-20210531135307899" style="zoom:67%;">
+
+<p>然后再次来执行：</p>
+<img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531135533757.png" alt="image-20210531135533757" style="zoom: 80%;">
+
+<img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531135628473.png" alt="image-20210531135628473" style="zoom:200%;">
+
+<p>问题不大，这表示的是你的pip要更新一下了，我们将单引号里面的内容复制粘贴一遍基本就没有啥问题了</p>
+<p><img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531140055695.png" alt="image-20210531140055695"></p>
+<p><img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531140148135.png" alt="image-20210531140148135"></p>
+<p>这个时候我们再来输入指令: pip list</p>
+<p>来查看当前安装的库。</p>
+<p><img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531140301094.png" alt="image-20210531140301094"></p>
+<p>当你看到这个的时候就表示这个库下载完成了，编程搞起！</p>
+<img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531140556750.png" alt="image-20210531140556750" style="zoom:200%;">
+
+<h3 id="requests库的使用"><a href="#requests库的使用" class="headerlink" title="requests库的使用"></a>requests库的使用</h3><p>这里羔羊用的是自带的IDLE编程，第一个站就选择经典的豆瓣top250</p>
+<p>网址：<a target="_blank" rel="noopener" href="https://movie.douban.com/top250">https://movie.douban.com/top250</a></p>
+<p>目标：获取当前网站页面</p>
+<h6 id="1、代码和运行结果"><a href="#1、代码和运行结果" class="headerlink" title="1、代码和运行结果"></a>1、代码和运行结果</h6><p><img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531142028177.png" alt="image-20210531142028177"></p>
+<p>当你输入完并且解决掉自己打的错误代码和报错以后你就会看到一行这样的字</p>
+<p><img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531142136401.png" alt="image-20210531142136401"></p>
+<p>你点击他，选择确定，就会显示出来整个页面了</p>
+<p><img src="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/image-20210531142225124.png" alt="image-20210531142225124"></p>
+<h6 id="2、代码讲解"><a href="#2、代码讲解" class="headerlink" title="2、代码讲解"></a>2、代码讲解</h6><p>接下来我们来一行一行代码来进行复盘：</p>
 <ol>
-<li>按下windows键和R键</li>
+<li><code>import requests</code>   #导入requests库</li>
 </ol>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530105026950.png" alt="image-20210530105026950"></p>
 <ol start="2">
-<li>在弹出的运行窗口里面输入cmd然后选择确定</li>
-</ol>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530105136456.png" alt="image-20210530105136456"></p>
-<ol start="3">
-<li><p>在弹出来的窗口中命令提示符窗口中输入：systeminfo</p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530105330812.png">4. 找到系统类型这里显示64就是64位的显示32就是32位的</p>
+<li><p><code>url = &#39;https://movie.douban.com/top250&#39;</code>  #设置网址并且将其设定为一个变量url 相当于给这么长的网址起一个短点的名字</p>
+</li>
+<li><p><code>headers</code> = {`</p>
+<pre><code>    `&#39;user-agent&#39;:&#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36&#39;`
+    &#125;`
+</code></pre>
 </li>
 </ol>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530105828496.png" alt="image-20210530105828496"></p>
-<p>然后我们选择自己位数的程序下载</p>
-<img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530110151817.png" alt="image-20210530110151817" style="zoom:67%;">
-
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530110328776.png" alt="image-20210530110328776"></p>
-<h3 id="3、运行python-exe"><a href="#3、运行python-exe" class="headerlink" title="3、运行python.exe"></a>3、运行python.exe</h3><p>直接双击运行，在这里要注意勾选添加到环境变量里面去，不然就直接重装吧，还简单些</p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530110522285.png" alt="image-20210530110522285"></p>
-<p>然后就是等待他下载完成</p>
-<img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530110559309.png" alt="image-20210530110559309" style="zoom:67%;">
-
-<img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530110912831.png" alt="image-20210530110912831" style="zoom: 67%;">
-
-<p>这就是下载完成了我们选择Close关闭就可以了，那么怎么确定自己是否安装完成了呢？</p>
-<p>我们可以选择windows+r 然后输入cmd</p>
-<p><img src="file://E:\boke1\source_posts\python%E7%AC%AC%E4%B8%80%E8%AF%BE\image-20210530105136456.png?lastModify=1622344185" alt="image-20210530105136456"></p>
-<p>在命令提示符里面输入： python</p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530111145666.png" alt="image-20210530111145666"></p>
-<p>出现以上画面就是下载成功了。</p>
-<h3 id="4、使用自带的IDLE"><a href="#4、使用自带的IDLE" class="headerlink" title="4、使用自带的IDLE"></a>4、使用自带的IDLE</h3><p>关于如何使用python有很多种方法，这里推荐一种比较适合初学者的方法就是使用python官方自带的软件IDLE</p>
-<p>当你下载好python以后，你按下windows按钮，会出现以下提醒，这里其实就是python自动给你安装的运行程序，对于一些嫌麻烦的人，直接在这里运行IDLE这个程序就可以用来运行python了。</p>
-<img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530111604183.png" alt="image-20210530111604183" style="zoom:67%;">
-
-<p>这里可以直接点击左键将他拖到桌面上来</p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530111901676.png" alt="image-20210530111901676"></p>
-<p>具体的运行就是选择<strong>file - new file</strong> 然后在新出现的untitled里面进行编辑</p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112119597.png" alt="image-20210530112119597"></p>
-<p>比如我运行一个 hello word</p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112256522.png" alt="image-20210530112256522"></p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112312432.png" alt="image-20210530112312432"></p>
-<p>这里大概意思是问你要不要保存然后运行，我们点击确定</p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112442982.png" alt="image-20210530112442982"></p>
-<p>选择保存的位置点击保存</p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112511016.png" alt="image-20210530112511016"></p>
-<p>在shell界面就会显示出你的代码了。</p>
-<p>这里在讲一下怎么去设置字体的大小</p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112620763.png" alt="image-20210530112620763"></p>
-<p>然后会出现如下图所示</p>
-<p><img src="/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/image-20210530112728917.png" alt="image-20210530112728917"></p>
-<p>选择完成点击ok就可以</p>
+<p>#将自己伪装成一个浏览器来进行访问，不然的话对方识别到你是一个python</p>
+<p>这里我会给大家提供多个伪装的东西，来让大家选择：</p>
+<table>
+<thead>
+<tr>
+<th><strong>Chrome   Win7:</strong></th>
+<th><strong>Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Firefox Win7:</strong></td>
+<td><strong>Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0</strong></td>
+</tr>
+<tr>
+<td><strong>Safari<br>Win7:</strong></td>
+<td><strong>Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50</strong></td>
+</tr>
+<tr>
+<td><strong>Opera<br>Win7:</strong></td>
+<td><strong>Opera/9.80 (Windows NT 6.1; U; zh-cn) Presto/2.9.168 Version/11.50</strong></td>
+</tr>
+<tr>
+<td><strong>IE<br>Win7+ie9：</strong></td>
+<td><strong>Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; .NET CLR 2.0.50727; SLCC2; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.3; .NET4.0C; Tablet PC 2.0; .NET4.0E)</strong></td>
+</tr>
+<tr>
+<td><strong>Win7+ie8：</strong></td>
+<td><strong>Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; InfoPath.3)</strong></td>
+</tr>
+<tr>
+<td><strong>WinXP+ie8：</strong></td>
+<td><strong>Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; GTB7.0)</strong></td>
+</tr>
+<tr>
+<td><strong>WinXP+ie7：</strong></td>
+<td><strong>Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)</strong></td>
+</tr>
+<tr>
+<td><strong>WinXP+ie6：</strong></td>
+<td><strong>Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)</strong></td>
+</tr>
+<tr>
+<td><strong>傲游3.1.7在Win7+ie9,高速模式:</strong></td>
+<td><strong>Mozilla/5.0 (Windows; U; Windows NT 6.1; ) AppleWebKit/534.12 (KHTML, like Gecko) Maxthon/3.0 Safari/534.12</strong></td>
+</tr>
+<tr>
+<td><strong>傲游3.1.7在Win7+ie9,IE内核兼容模式:</strong></td>
+<td><strong>Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.3; .NET4.0C; .NET4.0E)</strong></td>
+</tr>
+<tr>
+<td><strong>搜狗3.0在Win7+ie9,IE内核兼容模式:</strong></td>
+<td><strong>Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.3; .NET4.0C; .NET4.0E; SE 2.X MetaSr 1.0)</strong></td>
+</tr>
+<tr>
+<td><strong>搜狗3.0在Win7+ie9,高速模式:</strong></td>
+<td><strong>Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.33 Safari/534.3 SE 2.X MetaSr 1.0<br></strong></td>
+</tr>
+<tr>
+<td><strong>360浏览器3.0在Win7+ie9:</strong></td>
+<td><strong>Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.3; .NET4.0C; .NET4.0E)</strong></td>
+</tr>
+<tr>
+<td><strong>QQ浏览器6.9(11079)在Win7+ie9,极速模式:</strong></td>
+<td><strong>Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.41 Safari/535.1 QQBrowser/6.9.11079.201</strong></td>
+</tr>
+<tr>
+<td><strong>QQ浏览器6.9(11079)在Win7+ie9,IE内核兼容模式:</strong></td>
+<td><strong>Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; InfoPath.3; .NET4.0C; .NET4.0E) QQBrowser/6.9.11079.201</strong></td>
+</tr>
+<tr>
+<td><strong>阿云浏览器Win7+ie9</strong></td>
+<td><strong>Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)</strong></td>
+</tr>
+</tbody></table>
+<ol start="4">
+<li><code>reponse = requests.get(url = url,headers = headers)</code> #可以理解为去和网站沟通，告诉他你要访问的网站，你是什么浏览器，都写在这里，然后他就会去帮你访问。</li>
+<li><code>print(reponse.text)</code>#以文本格式将你获取的网站内容打印出来</li>
+</ol>
 
                 
             </div>
@@ -561,7 +626,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gaoiyang.github.io/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">https://gaoiyang.github.io/2021/05/22/python%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</a>
+                    <a href="https://gaoiyang.github.io/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/">https://gaoiyang.github.io/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -772,17 +837,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/05/22/gaoyang/">
+                <a href="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="gaoyang">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="python网络爬虫requests库（1）">
                         
-                        <span class="card-title">gaoyang</span>
+                        <span class="card-title">python网络爬虫requests库（1）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -792,9 +858,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -803,11 +869,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B5%8B%E8%AF%95/">
-                        <span class="chip bg-color">测试</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
@@ -821,13 +888,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/22/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/">
+                <a href="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="gaoyang">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="python爬虫理论知识">
                         
-                        <span class="card-title">gaoyang</span>
+                        <span class="card-title">python爬虫理论知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -838,7 +905,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
                             </span>
                         <span class="publish-author">
                             
