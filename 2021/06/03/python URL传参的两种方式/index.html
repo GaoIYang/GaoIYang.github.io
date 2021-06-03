@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CVE-2019-8449, Gao Yang">
+    <meta name="keywords" content="python URL传参的两种方式, Gao Yang">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CVE-2019-8449 | Gao Yang</title>
+    <title>python URL传参的两种方式 | Gao Yang</title>
     <link rel="icon" type="image/png" href="/gaoyang.icon">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CVE-2019-8449</h1>
+                    <h1 class="description center-align post-title">python URL传参的两种方式</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
-                                <span class="chip bg-color">漏洞复现</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-01
+                    2021-06-03
                 </div>
                 
 
@@ -468,17 +468,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="漏洞：CVE-2019-8449（jira可以显示出来用户名）"><a href="#漏洞：CVE-2019-8449（jira可以显示出来用户名）" class="headerlink" title="漏洞：CVE-2019-8449（jira可以显示出来用户名）"></a>漏洞：CVE-2019-8449（jira可以显示出来用户名）</h3><h3 id="适用版本：-Atlassian-Jira-7-12-lt-受影响版本-lt-8-4-0"><a href="#适用版本：-Atlassian-Jira-7-12-lt-受影响版本-lt-8-4-0" class="headerlink" title="适用版本： Atlassian Jira  7.12&lt; 受影响版本&lt;8.4.0"></a>适用版本： Atlassian Jira  7.12&lt; 受影响版本&lt;8.4.0</h3><p>大家好我是羔羊，今天和大家分享一个CVE漏洞复现</p>
-<h5 id="1、具体pyload"><a href="#1、具体pyload" class="headerlink" title="1、具体pyload:"></a>1、具体pyload:</h5><p>GET /rest/api/latest/groupuserpicker?query=<u>admin</u>&amp;maxResults=50&amp;showAvatar=false HTTP/1.1<br>Host: <u><a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></u><br>Pragma: no-cache<br>Cache-Control: no-cache<br>Upgrade-Insecure-Requests: 1<br>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36<br>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,<em>/</em>;q=0.8,application/signed-exchange;v=b3;q=0.9<br>Accept-Encoding: gzip, deflate<br>Accept-Language: zh-CN,zh;q=0.9<br>Connection: close</p>
-<h5 id="2、漏洞复现"><a href="#2、漏洞复现" class="headerlink" title="2、漏洞复现"></a>2、漏洞复现</h5><p>一般看到这种JIRA的都可以尝试去试试有没有该漏洞直接burp抓包</p>
-<p><img src="/2021/06/01/CVE-2019-8449(jira%E6%98%BE%E7%A4%BA%E5%87%BA%E7%94%A8%E6%88%B7%E5%90%8D)/image-20210601111521609.png" alt="image-20210601111521609"></p>
-<p>首先抓个包然后放到Repeater模块</p>
-<p><img src="/2021/06/01/CVE-2019-8449(jira%E6%98%BE%E7%A4%BA%E5%87%BA%E7%94%A8%E6%88%B7%E5%90%8D)/image-20210601111708766.png" alt="image-20210601111708766"></p>
-<p>然后直接将上面的pyload复制粘贴过去，这里Host填写你复现的网址，在query这里填写测试的用户名</p>
-<p>然后点击GO</p>
-<h6 id="1、找到用户"><a href="#1、找到用户" class="headerlink" title="1、找到用户"></a>1、找到用户</h6><p><img src="/2021/06/01/CVE-2019-8449(jira%E6%98%BE%E7%A4%BA%E5%87%BA%E7%94%A8%E6%88%B7%E5%90%8D)/image-20210601112522483.png" alt="image-20210601112522483"></p>
-<p>像这种就是找到了，就复现成功了，我们再来尝试个找不到的</p>
-<h6 id="2、找不到用户"><a href="#2、找不到用户" class="headerlink" title="2、找不到用户"></a>2、找不到用户</h6><p><img src="/2021/06/01/CVE-2019-8449(jira%E6%98%BE%E7%A4%BA%E5%87%BA%E7%94%A8%E6%88%B7%E5%90%8D)/image-20210601112640564.png" alt="image-20210601112640564"></p>
+                <h1 id="python-URL传参的两种方式"><a href="#python-URL传参的两种方式" class="headerlink" title="python URL传参的两种方式"></a>python URL传参的两种方式</h1><p>大家好我是羔羊!今天继续给大家分享网络爬虫中URL传参的两种方式</p>
+<h3 id="URL传参的两种方式"><a href="#URL传参的两种方式" class="headerlink" title="URL传参的两种方式"></a>URL传参的两种方式</h3><p>在页面里面常见的传参分为两种，一种为get传参，一种为post传参，他们在我们的爬虫中也是需要用不同的方式去进行设置的。</p>
+<p>接下来我们继续用豆瓣TOP250来作为例子进行讲解，首先打开网页然后按键盘最上面一排的F12</p>
+<p>![image-20210603094744603](python URL传参的两种方式/image-20210603094744603.png)</p>
+<p>会出现这样子的画面，我们选择网络，随机选择一个，这个时候我们可以看到在上面很清晰的写着它的传参方式</p>
+<p>![image-20210603094859045](python URL传参的两种方式/image-20210603094859045.png)</p>
+<p>那么我们为什么要区分URL的传参呢？这里我们可以简单的理解为他们有不同的写法，get传参他是可以直接和网址进行拼接的，他是直接写在网址上面的比如我们点击下一页的时候问号后面的部分就属于get传参</p>
+<p>![image-20210603095224725](python URL传参的两种方式/image-20210603095224725.png)</p>
+<p>遇到get传参，我们可以这么来构造你的爬虫代码</p>
+<h6 id="1、GET传参"><a href="#1、GET传参" class="headerlink" title="1、GET传参"></a>1、GET传参</h6><p>import requests</p>
+<p>#设置传参<br>key_dict = { ‘start’ : 25 }</p>
+<p>#伪装浏览器<br>headers={<br>        ‘user-agent’:’Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36’,<br>        ‘Host’:’movie.douban.com’<br>    }</p>
+<p>#发起get请求<br>r = requests.get(‘<a target="_blank" rel="noopener" href="https://movie.douban.com/top250&#39;,headers=headers">https://movie.douban.com/top250&#39;,headers=headers</a> ,params=key_dict)</p>
+<p>#以文本的方式打开<br>print(r.text)</p>
+<p>POST传参可以理解为吧内容藏起来了，他是单纯的放在外面给你看到，而是藏起来你看不到，这个时候我们一般要去F12找他的传参，来构造你的代码</p>
+<p>比如：</p>
+<p>![image-20210603101302757](python URL传参的两种方式/image-20210603101302757.png)</p>
+<p>我们现在看到的这个post传参，点击请求</p>
+<p>![image-20210603101400049](python URL传参的两种方式/image-20210603101400049.png)</p>
+<p>在这个地方的就都是他的传参的设置，但是我们在url哪里明显的是看不到这么多东西的</p>
+<p>![image-20210603101441385](python URL传参的两种方式/image-20210603101441385.png)</p>
+<p>所以一般post传参会用在参数比较多的地方，而参数较少的地方则会用get方法来进行设置。</p>
+<h6 id="2、POST传参"><a href="#2、POST传参" class="headerlink" title="2、POST传参"></a>2、POST传参</h6><p>import requests</p>
+<p>#设置传参<br>key_dict = { ‘start’ : 25 }</p>
+<p>#伪装浏览器<br>headers={<br>        ‘user-agent’:’Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36’,<br>        ‘Host’:’movie.douban.com’<br>    }</p>
+<p>#发起post请求<br>r = requests.post(‘<a target="_blank" rel="noopener" href="https://movie.douban.com/top250&#39;,headers=headers">https://movie.douban.com/top250&#39;,headers=headers</a> ,params=key_dict)</p>
+<p>#以文本的方式打开<br>print(r.text)</p>
 
                 
             </div>
@@ -505,7 +521,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gaoiyang.github.io/2021/06/01/CVE-2019-8449(jira%E6%98%BE%E7%A4%BA%E5%87%BA%E7%94%A8%E6%88%B7%E5%90%8D)/">https://gaoiyang.github.io/2021/06/01/CVE-2019-8449(jira%E6%98%BE%E7%A4%BA%E5%87%BA%E7%94%A8%E6%88%B7%E5%90%8D)/</a>
+                    <a href="https://gaoiyang.github.io/2021/06/03/python%20URL%E4%BC%A0%E5%8F%82%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/">https://gaoiyang.github.io/2021/06/03/python%20URL%E4%BC%A0%E5%8F%82%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -543,8 +559,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
-                                    <span class="chip bg-color">漏洞复现</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
                         </div>
@@ -715,7 +731,7 @@
         repo: 'GaoIYang.github.io',
         owner: 'GaoIYang',
         admin: "GaoIYang",
-        id: '2021-06-01T11-09-52',
+        id: '2021-06-03T09-37-17',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -743,9 +759,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/06/03/python%20URL%E4%BC%A0%E5%8F%82%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F/">
                     <div class="card-image">
@@ -763,9 +780,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -774,6 +791,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -792,13 +810,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/31/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABrequests/">
+                <a href="/2021/06/01/CVE-2019-8449(jira%E6%98%BE%E7%A4%BA%E5%87%BA%E7%94%A8%E6%88%B7%E5%90%8D)/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="python网络爬虫requests库（1）">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="CVE-2019-8449">
                         
-                        <span class="card-title">python网络爬虫requests库（1）</span>
+                        <span class="card-title">CVE-2019-8449</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -809,7 +827,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-01
                             </span>
                         <span class="publish-author">
                             
@@ -822,8 +840,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
+                        <span class="chip bg-color">漏洞复现</span>
                     </a>
                     
                 </div>
