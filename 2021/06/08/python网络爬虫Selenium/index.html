@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python网络爬虫BeautifulSoup, Gao Yang">
+    <meta name="keywords" content="python网络爬虫Selenium, Gao Yang">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python网络爬虫BeautifulSoup | Gao Yang</title>
+    <title>python网络爬虫Selenium | Gao Yang</title>
     <link rel="icon" type="image/png" href="/gaoyang.icon">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python网络爬虫BeautifulSoup</h1>
+                    <h1 class="description center-align post-title">python网络爬虫Selenium</h1>
                 </div>
             </div>
         </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-05
+                    2021-06-08
                 </div>
                 
 
@@ -468,69 +468,40 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python网络爬虫BeautifulSoup"><a href="#python网络爬虫BeautifulSoup" class="headerlink" title="python网络爬虫BeautifulSoup"></a>python网络爬虫BeautifulSoup</h1><p>大家好我是羔羊！今天给大家分享下解析数据里面的BeautifulSoup，在我们爬取网页的时候，经常需要在网页中获取特定的一些数据，这个时候就用到了我们的BeautifulSoup库。</p>
-<h3 id="BeautifulSoup的下载"><a href="#BeautifulSoup的下载" class="headerlink" title="BeautifulSoup的下载"></a>BeautifulSoup的下载</h3><p>在这里有一个坑，你直接在cmd里面输入pip install BeautifulSoup 是会报错的</p>
-<p><img src="/2021/06/05/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABBeautifulSoup/image-20210605130701552.png" alt="image-20210605130701552"></p>
-<p>因为他在python里面的库名虽然叫BeautifulSoup，但是在下载的时候需要用bs4来表示BeautifulSoup4，在这里我们需要用指令：<code>pip install bs4 -i https://pypi.douban.com/simple/</code></p>
-<p>来进行下载，下载完成以后用     <code>pip list</code>       来进行查看</p>
-<p><img src="/2021/06/05/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABBeautifulSoup/image-20210605130945348.png" alt="image-20210605130945348"></p>
-<p>很明显已经下载完成了，接下来就开始编写代码了。</p>
-<h3 id="BeautifulSoup代码案例"><a href="#BeautifulSoup代码案例" class="headerlink" title="BeautifulSoup代码案例"></a>BeautifulSoup代码案例</h3><p>在这里我们依旧用top250这个网址来进行讲解，我们今天爬取的是Top250里面的电影名字和导演主演等信息内容首先上代码</p>
-<p><code>import requests</code><br><code>from bs4 import  BeautifulSoup</code></p>
-<p><code>def get_movies():</code><br>    <code>headers = &#123;</code><br>        <code>&#39;user-agent&#39;:&#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36&#39;</code><br>        <code>,&#39;Host&#39;:&#39;movie.douban.com&#39;</code><br>        <code>&#125;</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">movie_list = []</span><br><span class="line">a = []</span><br><span class="line">b = []</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">1</span>):</span><br><span class="line">    link = <span class="string">&#x27;https://movie.douban.com/top250?start=&#x27;</span> + <span class="built_in">str</span>(i*<span class="number">25</span>)</span><br><span class="line">    r = requests.get(link,headers=headers,timeout = <span class="number">10</span>)</span><br><span class="line">    soup = BeautifulSoup(r.text,<span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">    div_list = soup.find_all(<span class="string">&#x27;div&#x27;</span>,class_ = <span class="string">&#x27;hd&#x27;</span> )</span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> div_list:</span><br><span class="line">        movie_name = name.span.text</span><br><span class="line">        a.append(movie_name)</span><br></pre></td></tr></table></figure>
-
-<p>``            </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">div_list = soup.find_all(<span class="string">&#x27;div&#x27;</span>,class_ = <span class="string">&#x27;bd&#x27;</span> )</span><br><span class="line"><span class="keyword">for</span> each <span class="keyword">in</span> div_list:</span><br><span class="line">    movie = each.p.text</span><br><span class="line">    b.append(movie)</span><br><span class="line">b = b[<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(a)):</span><br><span class="line">    <span class="built_in">print</span>(a[i])</span><br><span class="line">    <span class="built_in">print</span>(b[i])</span><br></pre></td></tr></table></figure>
-
-<p><code>movies = get_movies()</code></p>
-<p>在这里我们将整个爬虫给做成了一个方法，这样子更加方便以后我们对代码的复用性</p>
-<p>首先依旧是导入模块</p>
-<p><code>import requests</code><br><code>from bs4 import  BeautifulSoup</code></p>
-<p>接下来伪装自己的python将其伪装成一个浏览器</p>
-<pre><code>`headers = &#123;`
-    `&#39;user-agent&#39;:&#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36&#39;`
-    `,&#39;Host&#39;:&#39;movie.douban.com&#39;`
-    `&#125;`
-</code></pre>
-<p>这里因为还没讲怎么保存到本地，只是打印出来，所以就用两个列表来进行保存</p>
-<p>movie_list = []<br>a = []<br>b = []</p>
-<p>然后是进行网页的爬取</p>
-<p>link = ‘<a target="_blank" rel="noopener" href="https://movie.douban.com/top250?start=&#39;">https://movie.douban.com/top250?start=&#39;</a> + str(i*25)</p>
-<p>在这里说一句，我这里是直接爬取了10页的数据，所以添加了</p>
-<p>for i in range(0,10):</p>
-<p>timeout = 10</p>
-<p>表示连接的时间是10秒</p>
-<p>soup = BeautifulSoup(r.text,”lxml”)</p>
-<p>表示的是将文件以BeautifulSoup的方式来进行解析，解析成lxml的格式</p>
-<p>div_list = soup.find_all(‘div’,class_ = ‘hd’ )</p>
-<p>这句话要结合网站来进行理解</p>
-<p>首先打开网址：<a target="_blank" rel="noopener" href="https://movie.douban.com/top250">https://movie.douban.com/top250</a></p>
-<p>然后F12选择查看器在这里我们可以看到整个网页的代码，然后我们使用查看器左侧的箭头选择需要爬取的内容</p>
-<p><img src="/2021/06/05/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABBeautifulSoup/image-20210605134551044.png" alt="image-20210605134551044"></p>
-<p>然后我们来分析他的代码结构</p>
-<p><img src="/2021/06/05/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABBeautifulSoup/image-20210605134810512.png" alt="image-20210605134810512"></p>
-<p>发现他们的内容都在一个a标签里面，也在同一个div标签里面，在这里大家可以尝试点击别的电影名字，会发现他们的结构是一模一样的</p>
-<p><img src="/2021/06/05/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABBeautifulSoup/image-20210605134858697.png" alt="image-20210605134858697"></p>
-<p>所以我们需要的就是python帮助我们获取这几个标签里面的内容，这里我们就选择获取div标签里面的内容，但是这里我们可以看到有很多的div标签，具体获取哪一个呢？这时候我们可以看到旁边会有一个class = “hd”</p>
-<p><img src="/2021/06/05/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABBeautifulSoup/image-20210605135105676.png" alt="image-20210605135105676"></p>
-<p>它的class属性就是我们用来识别你获取的是哪一个div里面的内容的标志。</p>
-<p>div_list = soup.find_all(‘div’,class_ = ‘hd’ )</p>
-<p><strong>表达的意思就是这个网页里面所有的class属性为hd的div标签</strong></p>
-<p>这样子我们就可以获取到所有的电影名字了，但是要注意，在这个标签里面也有很多的内容，也有其他的一些标签，那么我们又是如何知道我们选中的就是电影名字呢？</p>
-<p><img src="/2021/06/05/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABBeautifulSoup/image-20210605135352870.png" alt="image-20210605135352870"></p>
-<p>我们就可以通过它的具体标签span来进行获取，因为我们只是获取里面的文字，所以这里需要加上.text来获取里面的内容</p>
-<p>movie_name = name.span.text</p>
-<p>这里要讲一下为什么要用</p>
-<p>for name in div_list:</p>
-<p>因为你获取的是所有的电影名字的标签，所以会有多个，那么我们就需要去每一个里面进行筛选，所以需要用遍历来进行操作</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div_list = soup.find_all(<span class="string">&#x27;div&#x27;</span>,class_ = <span class="string">&#x27;bd&#x27;</span> )</span><br><span class="line"><span class="keyword">for</span> each <span class="keyword">in</span> div_list:</span><br><span class="line">    movie = each.p.text</span><br><span class="line">    b.append(movie)</span><br><span class="line">b = b[<span class="number">1</span>:]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>这里的内容和上面的是一样的，大家可以参照上面自己进行分析</p>
-<p> b = b[1:]这一步的意思是去掉列表的第一位</p>
+                <h1 id="python网络爬虫Selenium"><a href="#python网络爬虫Selenium" class="headerlink" title="python网络爬虫Selenium"></a>python网络爬虫Selenium</h1><p>大家好！我是羔羊，今天和大家一起探讨下关于selenium库的使用和下载</p>
+<h3 id="selenium的下载"><a href="#selenium的下载" class="headerlink" title="selenium的下载"></a>selenium的下载</h3><p>首先我们需要下载selenium这个库，在这里直接输入代码: pip install selenium -i <a target="_blank" rel="noopener" href="https://pypi.douban.com/simple">https://pypi.douban.com/simple</a></p>
+<p>就可以下载完成了</p>
+<p><img src="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/image-20210608105115312.png" alt="image-20210608105115312"></p>
+<p>在这里要注意的是出来库以外，我们还需要安装一个插件用来自动开启浏览器进行内容的爬取，所以在这里给大家找了一个别人搭建的下载的地方：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/mozilla/geckodriver/releases">https://github.com/mozilla/geckodriver/releases</a></p>
+<p><img src="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/image-20210608104903698.png" alt="image-20210608104903698"></p>
+<p>我选择的是最后面的win64的版本，这里也用他作为例子进行讲解：</p>
+<p><img src="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/image-20210608105428736.png" alt="image-20210608105428736"></p>
+<p>首先解压缩获得一个叫geckodriver.exe的程序，然后找到火狐浏览器点击右键选择打开文件所在的位置</p>
+<p><img src="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/image-20210608110100435.png" alt="image-20210608110100435"></p>
+<p>然后将geckodriver.exe放入到该目录位置</p>
+<p><img src="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/image-20210608110324324.png" alt="image-20210608110324324"></p>
+<p>基本就可以了，这里要注意的是一定要用火狐浏览器，因为我的这个插件是配的火狐浏览器的。</p>
+<p>好了之后我们就可以写一个简单的代码来尝试运行自己的selenium程序了。</p>
+<h3 id="selenium的简单使用"><a href="#selenium的简单使用" class="headerlink" title="selenium的简单使用"></a>selenium的简单使用</h3><p>首先我们先尝试运行程序打开百度网页：</p>
+<p><code>from selenium import webdriver</code></p>
+<p><code>&#39;&#39;&#39;</code><br><code>网络驱动程序 webdriver    可执行路径 executable_path</code><br><code>&#39;&#39;&#39;</code></p>
+<p><code>driver = webdriver.Firefox(executable_path = r&quot;C:\Program Files (x86)\Mozilla Firefox\geckodriver.exe&quot; )</code><br><code>driver.get(&quot;http://www.baidu.com&quot;)</code></p>
+<p>这三行代码，我们一行行来解释</p>
+<ol>
+<li><code>from selenium import webdriver</code></li>
+</ol>
+<p>导入selenium库并且给它取个外号为webdriver</p>
+<ol start="2">
+<li><code>driver = webdriver.Firefox(executable_path = r&quot;C:\Program Files (x86)\Mozilla Firefox\geckodriver.exe&quot; )</code></li>
+</ol>
+<p>通过我们的geckodriver.exe程序来打开火狐浏览器  “C:\Program Files (x86)\Mozilla Firefox\geckodriver.exe” 表示的是这个程序所在的路径，大家请自行替换，小写的r表示的意思是，保持字符原始值的意思，因为python里面字符串中\有转义的含义，如\t可代表TAB，\n代表换行，所以我们需要采取一些方式使得\不被解读为转义字符。</p>
+<ol start="3">
+<li><code>driver.get(&quot;http://www.baidu.com&quot;)</code></li>
+</ol>
+<p>你要去的目标网址</p>
+<p>当你看到出现了一个这样子的页面，那么你的程序就运行成功了</p>
+<p><img src="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/image-20210608112406303.png" alt="image-20210608112406303"></p>
 <p>打完收工！</p>
 
                 
@@ -558,7 +529,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gaoiyang.github.io/2021/06/05/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABBeautifulSoup/">https://gaoiyang.github.io/2021/06/05/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABBeautifulSoup/</a>
+                    <a href="https://gaoiyang.github.io/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/">https://gaoiyang.github.io/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -768,7 +739,7 @@
         repo: 'GaoIYang.github.io',
         owner: 'GaoIYang',
         admin: "GaoIYang",
-        id: '2021-06-05T11-17-40',
+        id: '2021-06-08T10-33-50',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -796,9 +767,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/">
                     <div class="card-image">
@@ -816,9 +788,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -827,6 +799,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -845,13 +818,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/03/pythonURL%E7%9A%84%E4%BC%A0%E5%8F%82/">
+                <a href="/2021/06/05/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABBeautifulSoup/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="pythonURL的传参">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="python网络爬虫BeautifulSoup">
                         
-                        <span class="card-title">pythonURL的传参</span>
+                        <span class="card-title">python网络爬虫BeautifulSoup</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -862,7 +835,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-05
                             </span>
                         <span class="publish-author">
                             
