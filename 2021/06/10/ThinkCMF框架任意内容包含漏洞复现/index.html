@@ -468,8 +468,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="ThinkCMF框架任意内容包含漏洞"><a href="#ThinkCMF框架任意内容包含漏洞" class="headerlink" title="ThinkCMF框架任意内容包含漏洞"></a>ThinkCMF框架任意内容包含漏洞</h2><h3 id="适用版本："><a href="#适用版本：" class="headerlink" title="适用版本："></a>适用版本：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ThinkCMF X1.6.0</span><br><span class="line">ThinkCMF X2.1.0</span><br><span class="line">ThinkCMF X2.2.0</span><br><span class="line">ThinkCMF X2.2.1</span><br><span class="line">ThinkCMF X2.2.2</span><br></pre></td></tr></table></figure>
-
+                <h2 id="ThinkCMF框架任意内容包含漏洞"><a href="#ThinkCMF框架任意内容包含漏洞" class="headerlink" title="ThinkCMF框架任意内容包含漏洞"></a>ThinkCMF框架任意内容包含漏洞</h2><h3 id="适用版本："><a href="#适用版本：" class="headerlink" title="适用版本："></a>适用版本：</h3><p><code>ThinkCMF X1.6.0</code><br><code>ThinkCMF X2.1.0</code><br><code>ThinkCMF X2.2.0</code><br><code>ThinkCMF X2.2.1</code><br><code>ThinkCMF X2.2.2</code></p>
 <h3 id="漏洞原因："><a href="#漏洞原因：" class="headerlink" title="漏洞原因："></a>漏洞原因：</h3><p>因为他在模板路径出的函数运用出现问题，当模板主题不存在时会在当前目录下开始查找，形成文件包含</p>
 <p>对应参数：templateFile为模板文件地址</p>
 <p>构造文件包含 pyload：?a=display&amp;templateFile=README.md</p>
@@ -496,6 +495,7 @@
 <p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610122255444.png" alt="image-20210610122255444"></p>
 <p>这样子就会自动生成一个1.php文件了我们就可以直接链接蚁剑了</p>
 <p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610123620395.png" alt="image-20210610123620395"></p>
+<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/I5Zx21REspDQaQBDKXeoaw">https://mp.weixin.qq.com/s/I5Zx21REspDQaQBDKXeoaw</a></p>
 
                 
             </div>
